@@ -77,15 +77,19 @@ ICONV ŕ r
 
 
 # REP - .
-REP 237
+REP 269
 REP ^pocrtava podcrtava
+REP ^obećaj obećava
 REP ^zdrastv zdravstv
 REP nućemo$ nut_ćemo
 REP nućete$ nut_ćete
+REP ^takođe$ također
 REP ^riječo$ riječ_o
 REP ^usisač usisivač
 REP rejanac rejac
 REP ^prenat prednat
+REP ^samnom$ sa_mnom
+REP ^macho$ mačo
 REP šćemo$ st_ćemo
 REP šćete$ st_ćete
 REP aćemo$ at_ćemo
@@ -93,6 +97,7 @@ REP aćete$ at_ćete
 REP ićete$ it_ćete
 REP avaon ovaonic
 REP tentik tentifik
+REP ^ubistv ubojstv
 REP ^glađ glatkij
 REP ^očenaš Očenaš
 REP ićemo$ it_ćemo
@@ -104,17 +109,22 @@ REP ^rasazn razazn
 REP ^kosmos kozmos
 REP stravn stavn
 REP ^poravo$ pravo
+REP ^videć vidjet_ć
+REP ^shoppin šopin
 REP skinj stkinj
 REP reank rejk
 REP ampiš ampinš
 REP ^nezna ne_zna
 REP ^prdon pridon
 REP dreti$ derati
+REP ^nijes nis
 REP nešen nesen
 REP ićeš$ it_ćeš
 REP ^subst supst
 REP aćeš$ at_ćeš
 REP ^obama$ oboma
+REP ^peva pjeva
+REP ^juče$ jučer
 REP ^lotus lotos
 REP nuću$ nut_ću
 REP nion nionic
@@ -126,6 +136,10 @@ REP ćovije čovje
 REP vežen vezen
 REP ećeš$ et_ćeš
 REP ljanj ljenj
+REP ^gosp$ gosp.
+REP ^dobija dobiva
+REP ^nemog ne_mog
+REP ^odma$ odmah
 REP ^pretč predč
 REP tarn ćarnic
 REP šćeš$ st_ćeš
@@ -136,19 +150,23 @@ REP ^bimo$ bismo
 REP ^pojas pojasev
 REP ^kazin kasin
 REP ^htjeo$ htio
+REP ^ajde$ hajde
 REP ^menom$ mnom
 REP ^bite$ biste
 REP ^stim$ s_tim
 REP ^polu- polu
 REP ^moće$ može
 REP skme$ skome
+REP ^nebi ne_bi
 REP nara napra
 REP skmu$ skomu
 REP ^ljud$ ljut
+REP ^neč neć
 REP ^paje$ pa_je
 REP ^trab trav
 REP ^trab treb
 REP ^jel$ je_li
+REP ^tex Teks
 REP bljiv biv
 REP roja roji
 REP ljiv ljav
@@ -163,6 +181,7 @@ REP aon aonic
 REP iće$ it_će
 REP šće$ st_će
 REP arn arnic
+REP ^oće hoće
 REP iju e
 REP tid tud
 REP ^poveč več
@@ -173,12 +192,15 @@ REP eću$ et_ću
 REP šću$ st_ću
 REP ljen$ ljne
 REP eće$ et_će
+REP ^jel$ jer
 REP ^nek$ neka
 REP lik link
 REP take$ tke
 REP nis nijs
+REP ^sed sjed
 REP skm$ skim
 REP skm$ skom
+REP ^pic pizz
 REP ioc$ ilac
 REP kno ktno
 REP ije ive
@@ -186,16 +208,20 @@ REP isl i_sl
 REP nest nijet
 REP aoc$ alac
 REP ^mže$ može
+REP ^iko$ itko
+REP ata aća
 REP rni rnu
 REP rh rth
 REP ljnj nj
 REP mnj mlj
 REP mc mpc
+REP ^al$ ali
 REP ^ra raz
 REP ^bim$ bih
 REP ^čiž čiz
 REP ini inu
 REP kdž gdž
+REP ^aj haj
 REP jat jit
 REP dni$ tni
 REP on onic
@@ -222,8 +248,11 @@ REP st tst
 REP is ijs
 REP un utn
 REP vši ći
+REP eć$ eći
 REP ko$ klo
+REP ko kao
 REP nk ngk
+REP nt nta
 REP ia ija
 REP lj nj
 REP iju$ e
@@ -256,17 +285,19 @@ REP sč šč
 REP tš dš
 REP žc šc
 REP ts ds
+REP dj đ
 REP x ks
+REP c k     # ova tri pravila neće raditi jer su preslična, treba proširiti kontekst pravila
 REP c ts
 REP c ds
-REP a -a
+REP a -a    # ovo i sljedeće pravilo treba proširiti kontekstom jer ovako neće dobro raditi
 REP a aa
 REP d dd
 REP e ee
-REP u -u
+REP u -u    # ovo i sljedeće pravilo bi moglo biti u koliziji zbog načina na koji Hunspell prolazi kroz REP
+REP u uu
 REP n nn
 REP o oo
-REP u uu
 REP s ss
 REP i je
 REP zš š
@@ -275,7 +306,6 @@ REP dž č
 REP ^ts c
 REP št š
 REP st s
-REP c k
 REP g h
 REP ć č
 REP č ć
@@ -314,10 +344,12 @@ REP ^x X
 REP ^y Y
 REP ^z Z
 REP ^ž Ž
+REP x ks
 REP - _
+REP ^ne ne_
 
 
-AF 422
+AF 425
 AF ZZ	# 1
 AF ZY	# 2
 AF ZX	# 3
@@ -740,6 +772,9 @@ AF SJ   # 419
 AF SI   # 420
 AF SH   # 421
 AF SG   # 422
+AF SF   # 423
+AF SE   # 424
+AF SD   # 425
 
 
 SFX XZ Y      21
@@ -3993,4 +4028,25 @@ SFX SG i      eg         [čćšjžđ]i
 SFX SG i      ega        [čćšjžđ]i
 SFX SG i      em         [čćšjžđ]i
 SFX SG i      emu        [čćšjžđ]i
+
+SFX SF Y 4
+SFX SF 0 -e .
+SFX SF 0 -i .
+SFX SF 0 -u .
+SFX SF 0 -om .
+
+SFX SE Y 3
+SFX SE 0 -ja .
+SFX SE 0 -ju .
+SFX SE 0 -jem .
+
+SFX SD Y 6
+SFX SD a e a
+SFX SD a i a
+SFX SD a u a
+SFX SD a o a
+SFX SD a om a
+SFX SD 0 ma a
+
+
 
